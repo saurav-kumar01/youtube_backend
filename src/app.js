@@ -24,4 +24,11 @@ app.use(express.static("public"));
 // cookieParser ka use itna hai ki hum server per cookie set and remove bhi kr sakta pau mean that crud operation perfom ho jaye
 // iske duvara hum user ki cookie ko secure kr paye and server hi read kr paye and server remove kr
 app.use(cookieParser());
+
+// routes import
+import userRouter from "./routes/user.routes.js";
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
+
 export { app };
